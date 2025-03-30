@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -52,16 +53,17 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				sidebar: {
-					DEFAULT: 'hsl(var(--sidebar-background))',
-					foreground: 'hsl(var(--sidebar-foreground))',
-					primary: 'hsl(var(--sidebar-primary))',
-					'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
-					accent: 'hsl(var(--sidebar-accent))',
-					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
-					border: 'hsl(var(--sidebar-border))',
-					ring: 'hsl(var(--sidebar-ring))'
-				}
+        retro: {
+          black: '#0f0f1b',
+          purple: '#832bff',
+          pink: '#ff2bea',
+          blue: '#2b84ff',
+          cyan: '#2bfff8',
+          green: '#28f271',
+          yellow: '#ffdb2b',
+          orange: '#ff832b',
+          red: '#ff2b4c',
+        },
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -84,11 +86,38 @@ export default {
 					to: {
 						height: '0'
 					}
-				}
+				},
+        'glow': {
+          '0%, 100%': {
+            filter: 'brightness(1)',
+          },
+          '50%': {
+            filter: 'brightness(1.2) drop-shadow(0 0 12px rgba(255, 43, 234, 0.8))',
+          },
+        },
+        'scanline': {
+          '0%': { transform: 'translateY(0)' },
+          '100%': { transform: 'translateY(100%)' },
+        },
+        'float': {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-10px)' },
+        },
+        'pixel-shift': {
+          '0%': { transform: 'translateX(0)' },
+          '2%': { transform: 'translateX(2px)' },
+          '4%': { transform: 'translateX(-2px)' },
+          '6%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(0)' },
+        },
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+        'glow': 'glow 2s ease-in-out infinite',
+        'scanline': 'scanline 8s linear infinite',
+        'float': 'float 6s ease-in-out infinite',
+        'pixel-shift': 'pixel-shift 10s ease-in-out infinite',
 			}
 		}
 	},
