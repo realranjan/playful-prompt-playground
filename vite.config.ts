@@ -11,7 +11,10 @@ export default defineConfig(({ mode }) => ({
     open: true,
   },
   plugins: [
-    react(),
+    react({
+      // Add TypeScript configuration override
+      tsDecorators: true,
+    }),
     mode === 'development' &&
     componentTagger(),
   ].filter(Boolean),
@@ -19,5 +22,9 @@ export default defineConfig(({ mode }) => ({
     alias: {
       "@": path.resolve(__dirname, "./src"),
     },
+  },
+  // Add esbuild configuration to handle TypeScript
+  esbuild: {
+    logOverride: { 'this-is-undefined-in-esm': 'silent' },
   },
 }));
