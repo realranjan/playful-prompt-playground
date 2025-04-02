@@ -9,7 +9,7 @@ import CollectibleBadge from '@/components/game/CollectibleBadge';
 import LeaderboardCard from '@/components/game/LeaderboardCard';
 import { gamesData, categoriesData, badgesData, leaderboardData } from '@/data/mockData';
 import { Button } from '@/components/ui/button';
-import { Trophy, Fire, Star, ArrowRight } from 'lucide-react';
+import { Trophy, Flame, Star, ArrowRight } from 'lucide-react';
 
 const Index = () => {
   const featuredGame = gamesData.find(game => game.isFeatured);
@@ -46,7 +46,7 @@ const Index = () => {
           <div className="my-16">
             <div className="flex justify-between items-center mb-6">
               <div className="flex items-center">
-                <Fire className="mr-2 h-5 w-5 text-retro-orange" />
+                <Flame className="mr-2 h-5 w-5 text-retro-orange" />
                 <h2 className="text-2xl font-bold text-white">Trending Games</h2>
               </div>
               <Button variant="link" className="text-white/70 hover:text-white">
