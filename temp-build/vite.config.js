@@ -15,5 +15,7 @@ export default defineConfig({
   // Add esbuild configuration to handle TypeScript
   esbuild: {
     logOverride: { 'this-is-undefined-in-esm': 'silent' },
+    // Use a custom tsconfig for build
+    tsconfig: '../src/vite-tsconfig.json'
   }
 });
